@@ -34,7 +34,6 @@ export default class TimeTable extends Component {
                     {({ loading, error, data }) => {
                         if (loading) return <div>loading...</div>
                         if (error) return <div>error: {error}</div>
-                        console.log(data);
                         return data.stops.map((stop) => (
                             <div key={stop.id}>
                             <h3>{stop.name}</h3>
