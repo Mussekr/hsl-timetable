@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import ApolloClient from 'apollo-boost'
+import { ApolloProvider } from 'react-apollo';
 import './App.css';
+import TimeTable from './TimeTables';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const client  = new ApolloClient({
+  uri: 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql'
+});
+
+export default class App extends Component {
+		render() {
+			return (
+				<ApolloProvider client={client}>
+      		<div className="App">
+      		<header className="App-header">
+						<TimeTable />
+      			</header>
+    			</div>
+    		</ApolloProvider>
+			)
+		}
 }
 
-export default App;
