@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "HSL Timetable Valimo",
+  "name": "HSL timetables of closest bus stops",
   "icons": [
     {
       "src": "favicon.ico",
