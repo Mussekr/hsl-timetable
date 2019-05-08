@@ -3,12 +3,8 @@ import { Query } from 'react-apollo';
 import { gql } from 'apollo-boost';
 import TimeCell from './TimeCell';
 
-let count = 0;
-
 export default class TimeTable extends Component {
     render() {
-        console.log(count)
-        count++;
         return (
             <Query
                 pollInterval={30000}
@@ -42,7 +38,7 @@ export default class TimeTable extends Component {
                             <div key={stop.id}>
                             <h3>{stop.name}</h3>
                             <h5>{stop.desc}</h5>
-                            <table>
+                            <table className="timetable">
                                 <tbody>
                                     {stop.stoptimesWithoutPatterns.map((stopTime, index) => (
                                         <tr key={index}>
