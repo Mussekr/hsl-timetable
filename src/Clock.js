@@ -8,7 +8,7 @@ export default class Clock extends Component {
     };
 
     componentDidMount() {
-        this.clockInterval = setInterval(() => this.setState({ time: moment() }), 500);
+        this.clockInterval = setInterval(() => this.setState({ time: moment() }), 1000);
     }
 
     componentWillUnmount() {
