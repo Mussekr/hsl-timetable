@@ -1,14 +1,15 @@
+// Normalisoidaan CSS näkymään kaikilla selaimilla samalla lailla (=resetoidaan selainten omat CSS-asetukset).
+@import '~normalize.css';
 @import './variables.scss';
 
 body {
-  background-color: $backgound-color;
-  margin: 2.5%;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  color: $text-color;
+  background-color: $background-color;
+  line-height: 1.5;
+  font-family: $font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: $font-weight-normal;
 }
 
 code {
@@ -16,6 +17,6 @@ code {
     monospace;
 }
 
-div {
-  width: 100%;
+h1, h2, h3, h4, h5, b, strong {
+  font-weight: $font-weight-bold;
 }

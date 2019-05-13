@@ -6,39 +6,188 @@
 
 .App-logo {
   font-size: calc(30px + 2vmin);
-  color: white;
+  color: $text-color;
   text-align: center;
   position: sticky;
   top: 0;
-  background-color: $backgound-color;
+  background-color: $background-color;
+  box-shadow: 0 1px 1px rgba(#000, .15), 0 1px 4px rgba(#000, .1);
+  margin: 0;
+  padding: $unit 0;
 }
 
-.App-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+.realtime-indicator {
+  color: #ea295a;
+}
+
+.destination-list {
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: $text-color;
+  width: 400%;
+  display: flex;
+
+  scroll-snap-type: y mandatory;
 }
 
+.destination {
+  scroll-snap-align: start;
+  padding: $unit;
 
-@media screen and (max-width: 1200px) {
-  .App-header {
-    text-align: center;
-    flex-direction: column;
-    font-size: calc(15px + 2vmin);
+  &:last-child {
+    background-color: rgba(#000, .15);
   }
-  table.timetable {
+
+  &:not(:last-child) {
+    box-shadow: -1px 0 0 1px rgba(#000, .05);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: $unit;
+    color: $header-text-color;
+
+    h3, h5 {
+      margin: 0;
+    }
+
+    svg {
+      margin-right: $unit-small;
+    }
+  }
+
+  &__name, &__desc {
+    margin: 0;
+  }
+}
+
+.timetable {
+
+  &__row {
+    color: $timetable-row-color;
+  }
+
+  &__row--next {
+    color: $timetable-row-color-next;
+    font-weight: $font-weight-bold;
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  &__time {
+    width: 3.5em;
+    white-space: nowrap;
+  }
+
+  &__route {
+    width: 2em;
+    white-space: nowrap;
+  }
+
+  margin-bottom: $unit;
+}
+
+@media screen and (min-width: 600px) {
+  .App {
+    /*display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;*/
+  }
+
+  .destination-list {
+    //flex-wrap: wrap;
+    //width: 100%;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .destination {
+    width: auto;
+
+    &__header {
+      padding-right: $unit;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .destination-list {
+    //text-align: center;
+    //flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    //font-size: calc(15px + 2vmin);
+    display: table;
+    table-layout: fixed;
+  }
+
+  .destination {
+    display: table-cell;
+  }
+
+  /*table.timetable {
     margin-left:auto; 
     margin-right:auto;
-  }
+  }*/
+  /*.timetable {
+    margin-bottom: $unit;
+  }*/
 }
 
+.settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  form {
+    padding: $unit;
+    width: 320px;
+    margin: 0 auto;
+
+    input {
+      font: $font-weight-bold 24px/1.5 $font-family;
+      width: 100%;
+
+      &[type="text"],
+      &[type="number"] {
+        padding: $unit-tiny / 2 $unit-tiny;
+        height: auto;
+        line-height: 1;
+        margin-bottom: $unit;
+      }
+
+      &[type="submit"] {
+        color: #fff;
+        border-radius: $unit-large;
+        line-height: $unit-large;
+        height: auto;
+        padding: $unit-tiny $unit;
+        width: 100%;
+        background-color: #179f9c;
+        border: none;
+      }
+    }
+  }
+}
 
 .settings-button {
   position: fixed;
   top: 0;
   left: 0;
   margin: 1em;
+  background-color: transparent;
+  border: none;
+
+  svg {
+    fill: rgba(#fff, .25);
+  }
+
+  &:hover svg {
+    fill: #fff;
+  }
 }

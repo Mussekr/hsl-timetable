@@ -1,3 +1,16 @@
+$unit-tiny: 6px;
+$unit-small: $unit-tiny * 2;
+$unit: $unit-small * 2;
+$unit-large: $unit * 2;
+$unit-huge: $unit-large * 2;
 
+$font-weight-normal: 300;
+$font-weight-bold: 400;
+$font-family: "Oswald", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 
-$backgound-color: #282c34;
+$text-color: #feeb38;
+$header-text-color: $text-color;
+$background-color: #194388;
+
+$timetable-row-color-next: $text-color;
+$timetable-row-color: rgba($text-color, .65);
