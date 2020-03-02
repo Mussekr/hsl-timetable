@@ -11,6 +11,7 @@ const vehicleTypes = {
     3: 'bus',
     109: 'train',
     0: 'tram',
+    1: 'train',
 };
 
 export default class TimeTable extends Component {
@@ -23,7 +24,7 @@ export default class TimeTable extends Component {
             <Query
                 pollInterval={15000}
                 query={gql`{
-                    stops(ids: ["HSL:1020502", "HSL:1020458"]) {
+                    stops(ids: ["HSL:1020502", "HSL:1020458", "HSL:1020604"]) {
                         id
                         name
                         desc
