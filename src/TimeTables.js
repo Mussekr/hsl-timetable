@@ -10,6 +10,7 @@ import SvgIcon from './components/SvgIcon';
 const vehicleTypes = {
     3: 'bus',
     109: 'train',
+    0: 'tram',
 };
 
 export default class TimeTable extends Component {
@@ -22,7 +23,7 @@ export default class TimeTable extends Component {
             <Query
                 pollInterval={15000}
                 query={gql`{
-                    stops(ids: ["HSL:1020502"]) {
+                    stops(ids: ["HSL:1020502", "HSL:1020458"]) {
                         id
                         name
                         desc
