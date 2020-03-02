@@ -20,7 +20,7 @@ export default class TimeTable extends Component {
         const showAfterMinutes = _.get(settings, 'showAfterMinutes', '15');
         return (
             <Query
-                variables={{ stops: ["HSL:1465102" ,"HSL:1291181","HSL:1465551", "HSL:1465101"] }}
+                variables={{ stops: ["HSL:1020551"] }}
                 pollInterval={15000}
                 query={gql`{
                     stops(ids: ["HSL:1465102" ,"HSL:1291181","HSL:1465551", "HSL:1465101"]) {
