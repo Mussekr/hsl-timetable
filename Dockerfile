@@ -4,6 +4,7 @@ WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
 RUN yarn
 COPY . ./
+ENV PUBLIC_URL /hsl/
 RUN yarn build
 
 # Stage 2 - the production environment
